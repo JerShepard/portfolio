@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="head-inner">
+      <div class="logo"></div>
+      <div style="font-weight:700">Валерия Томилина<br><span class="meta">Technical Artist</span></div>
+      <nav>
+        <a href="#about">О себе</a>
+        <a href="#experience">Опыт</a>
+        <a href="#skills">Навыки</a>
+        <a href="#education">Образование</a>
+        <a href="#portfolio">Проекты</a>
+        <a href="#gallery">Галерея</a>
+        <a href="#animations">Анимации</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="about" class="panel">
+      <h1>О себе</h1>
+      <p>Технический художник с 3‑летним опытом в веб‑играх. Умею создавать и фиксить анимации в <strong>Spine 2D</strong>, подготавливать и оптимизировать графику, настраивать интеграцию ассетов в код.
+         Для ускорения рабочего процесса пишу совместно с gpt скрипты преимущественно на java. Развиваюсь в разных направлениях: от 2d графики до создания прототипов на различных движках (Game Maker/Unity/Unreal).
+         Два года изучала 3d и полгода работала на фрилансе, создавая модели окружения (стены/арки/окна)</p>
+    </section>
+
+    <section id="experience" class="panel">
+      <h2>Опыт</h2>
+      <h3>Technical Artist <span class="meta">(2022)</span></h3>
+      <h3>Оператор виртуальной реальности и smm менеджер (по совместительству) <span class="meta">(2022)</span></h3>
+      <h3>Техник ЦДО (Центр дистанционного обучения) <span class="meta">(2020)</span></h3>
+
+      <ul>
+        <li>Spine 2D анимации, подготовка ассетов.</li>
+        <li>Photoshop: ретушь, оптимизация графики.</li>
+        <li>After Effects: простые графические эффекты.</li>
+        <li>Документация по ассетам.</li>
+        <li>Скрипты (GPT+Java): PNG→WebP с автонеймом, нарезка/сборка атласов.</li>
+      </ul>
+    </section>
+
+    <section id="skills" class="panel">
+      <h2>Навыки и инструменты</h2>
+      <div class="pills">
+        <span class="pill">Spine 2D</span>
+        <span class="pill">Photoshop</span>
+        <span class="pill">After Effects</span>
+        <span class="pill">Figma</span>
+        <span class="pill">Blender</span>
+        <span class="pill">ZBrush</span>
+        <span class="pill">Substance Painter</span>
+        <span class="pill">Marmoset</span>
+        <span class="pill">Maya</span>
+        <span class="pill">Java/GPT scripting</span>
+      </div>
+    </section>
+
+    <section id="education" class="panel">
+      <h2>Образование</h2>
+      <ul>
+        <li><strong>Бакалавриат:</strong> Прикладная математика и информатика — <em>ГУМРФ им. адмирала С.О.Макарова</em></li>
+        <li>Кайно: Blender 2.0</li>
+        <li>Кайно: Blender Gameready model (В процессе)</li>
+        <li>Contented: «Геймдизайнер» (В процессе)</li>
+      </ul>
+    </section>
+
+    <section id="gallery" class="panel">
+      <h2>Галерея</h2>
+        <div class="gallery-grid">
+          <!-- проект 1 -->
+            <img src="\images\3d_Blade\blade_2.png" alt="3d_Blade" onclick="openLightbox(0, '3d_Blade')" data-group="3d_Blade">
+          <!-- проект 2 -->
+            <img src="images\neonCash\bgRegular.jpg" alt="neonCash" onclick="openLightbox(0, 'neonCash')" data-group="neonCash">
+          <!-- проект 3 -->
+            <img src="images\UI\UI.png" alt="UI" onclick="openLightbox(0, 'UI')" data-group="UI">
+          <!-- проект 4 -->
+          <img src="images\2Darts\rock.jpg" alt="2Darts" onclick="openLightbox(0, '2Darts')" data-group="2Darts">
+          <!-- проект 5 -->
+          <img src="images\3D_continue\deer.jpg" alt="3D_continue" onclick="openLightbox(0, '3D_continue')" data-group="3D_continue">
+          <!-- проект 6 -->
+          <img src="images\presentation\App_DnD_1.png" alt="presentation" onclick="openLightbox(0, 'presentation')" data-group="presentation">
+          </div>
+    </section>
+
+    <section id="animations" class="panel">
+      <h2>Анимации (видео)</h2>
+      <div class="gallery-grid">
+        <video controls muted controlsList="nodownload noremoteplayback" disablePictureInPicture>
+           <source src="animations/symbols_NeonCash.mp4" type="video/mp4">
+        </video>   
+        <video controls muted controlsList="nodownload noremoteplayback" disablePictureInPicture>
+           <source src="animations/freespinsOpening.mp4" type="video/mp4">
+        </video>   
+        <video controls muted controlsList="nodownload noremoteplayback" disablePictureInPicture>
+           <source src="animations/jackpotAfrica.mp4" type="video/mp4">
+        </video>  
+        <video controls muted controlsList="nodownload noremoteplayback" disablePictureInPicture>
+           <source src="animations/jackpotMoon.mp4" type="video/mp4">
+        </video>  
+        <video controls muted controlsList="nodownload noremoteplayback" disablePictureInPicture>
+           <source src="animations/alcimist.mp4" type="video/mp4">
+        </video>  
+        <video controls muted controlsList="nodownload noremoteplayback" disablePictureInPicture>
+           <source src="animations/symbolLAfrica.mp4" type="video/mp4">
+        </video> 
+      </div>
+    </section>
+
+    <section id="contacts" class="panel">
+      <h2>Контакты</h2>
+      <p>📩 Tomler94@yandex.ru| Telegram: @ValeriT94 | Discord: jokerdark_shepard | Artstation: https://www.artstation.com/jer_shepard</p>
+    </section>
+
+    <footer>© 2025 ValeriT — Resume & Portfolio</footer>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <span class="close-btn" onclick="closeLightbox()">&times;</span>
+      <span class="nav-btn prev" onclick="changeImage(-1)">&#10094;</span>
+      <img id="lightbox-img" src="" alt="Large view">
+      <span class="nav-btn next" onclick="changeImage(1)">&#10095;</span>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
