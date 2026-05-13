@@ -54,11 +54,9 @@ function getImagesByGroup(groupName) {
       'images/3D_continue/maya.jpg'
     ];
   }
-  if (groupName === 'presentation') {
+  if (groupName === 'SymbolsArt') {
     return [
-      'images/presentation/App_DnD_1.png',
-      'images/presentation/App_DnD_2.png',
-      'images/presentation/App_DnD_3.png'
+      'images/SymbolsArt/WaterPotion.png',
     ];
   }
   return [];
