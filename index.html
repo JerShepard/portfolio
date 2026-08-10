@@ -16,6 +16,18 @@
   <div class="desk-leaves desk-leaves--left" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="desk-leaves desk-leaves--right" aria-hidden="true"><i></i><i></i><i></i></div>
 
+  <div class="desk-props" aria-hidden="true">
+    <div class="keycap keycap--ctrl">Ctrl</div><div class="keycap keycap--c">C</div><div class="keycap keycap--v">V</div>
+    <div class="tablet-pen"><i></i></div>
+    <div class="cassette-player">
+      <div class="player-window"><span></span><i></i><i></i></div>
+      <div class="player-label">cozy sounds</div>
+      <div class="player-controls"><i>◀</i><i>▶</i><i>■</i></div>
+      <div class="player-speaker"></div>
+    </div>
+    <div class="cassette-stack"><i data-label="morning"></i><i data-label="rainy day"></i><i data-label="soft focus"></i><i data-label="night notes"></i></div>
+  </div>
+
   <header class="topbar">
     <a class="mini-brand" href="#cover"><span>V</span> ValeriT</a>
     <p>interactive portfolio journal</p>
@@ -38,13 +50,16 @@
 
       <section class="chapter is-active" data-chapter="cover" aria-labelledby="cover-title">
         <div class="page page--illustration">
-          <div class="shop-scene" aria-hidden="true">
-            <div class="cloud cloud--one"></div><div class="cloud cloud--two"></div>
-            <div class="shop"><div class="awning"></div><div class="door"><span></span><span></span></div><div class="window-box"></div></div>
-            <div class="vine vine--one"><i></i><i></i><i></i></div><div class="vine vine--two"><i></i><i></i><i></i></div>
-            <div class="cat cat--one"><i></i></div><div class="cat cat--two"><i></i></div>
+          <div class="inside-cover">
+            <p class="inside-cover__small">this journal belongs to</p>
+            <strong>ValeriT</strong>
+            <span class="inside-cover__line"></span>
+            <p class="inside-cover__note">Здесь хранятся работы,<br>идеи и планы на будущее.</p>
+            <div class="inside-cover__tags"><i>art</i><i>motion</i><i>games</i><i>code</i></div>
+            <div class="pressed-plant"><i></i><i></i><i></i><i></i></div>
+            <div class="cat-doodle">／ᐠ｡ꞈ｡ᐟ＼</div>
+            <span class="coffee-ring" aria-hidden="true"></span>
           </div>
-          <p class="postcard-note">Небольшое место, где я храню<br>работы, идеи и планы на будущее.</p>
         </div>
         <div class="page page--cover-copy">
           <span class="paperclip" aria-hidden="true"></span>
@@ -74,6 +89,7 @@
           </div>
           <div class="note-card note-card--green"><h3>Сейчас</h3><p>Работаю Technical Artist и прохожу курс повышения квалификации по геймдизайну.</p></div>
           <div class="note-card note-card--yellow"><h3>Мне интересно</h3><ul><li>оживлять игровой арт;</li><li>разбираться в системах;</li><li>создавать удобный пайплайн;</li><li>придумывать маленькие миры.</li></ul></div>
+          <div class="page-sticker page-sticker--flower" aria-hidden="true">✿</div>
           <div class="stamp stamp--profile" aria-hidden="true">HELLO!<small>01</small></div>
         </div>
       </section>
@@ -164,7 +180,7 @@
         </div>
         <div class="page page--contact-right">
           <div class="letter"><p>Если вам близко сочетание творчества, любопытства и технического подхода — буду рада познакомиться.</p><span>Валерия ✿</span></div>
-          <div class="collected-stamps" aria-label="Собранные штампы"><i>01</i><i>02</i><i>03</i><i>04</i><i>05</i><i>06</i></div>
+          <div class="collected-stamps" aria-label="Собранные штампы"><i data-stamp="profile">01</i><i data-stamp="tech-art">02</i><i data-stamp="three-d">03</i><i data-stamp="game-design">04</i><i data-stamp="motion">05</i><i data-stamp="contact">06</i></div>
           <button class="restart-button" type="button" data-go="cover">Вернуться на обложку</button>
           <div class="stamp stamp--contact" aria-hidden="true">SEE YOU!<small>06</small></div>
         </div>

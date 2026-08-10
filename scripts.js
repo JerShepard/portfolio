@@ -18,6 +18,9 @@ function updateProgress() {
   const count = visitedPages.size;
   progressBar.style.width = `${(count / 6) * 100}%`;
   progressText.textContent = `${count} / 6 глав`;
+  document.querySelectorAll(".collected-stamps [data-stamp]").forEach((stamp) => {
+    stamp.classList.toggle("is-collected", visitedPages.has(stamp.dataset.stamp));
+  });
 }
 
 function showStampToast() {
@@ -33,8 +36,12 @@ function showPage(pageName, updateHash = true) {
   const oldChapter = chapters.find((chapter) => !chapter.hidden);
   const newChapter = chapters.find((chapter) => chapter.dataset.chapter === pageName);
   if (oldChapter !== newChapter) {
+    const direction = nextIndex > currentPageIndex ? "forward" : "backward";
+    oldChapter?.querySelectorAll("video").forEach((video) => video.pause());
     oldChapter?.classList.remove("is-active");
     oldChapter?.setAttribute("hidden", "");
+    newChapter.classList.remove("turn-forward", "turn-backward");
+    newChapter.classList.add(direction === "forward" ? "turn-forward" : "turn-backward");
     newChapter.removeAttribute("hidden");
     requestAnimationFrame(() => newChapter.classList.add("is-active"));
   }
@@ -52,7 +59,9 @@ function showPage(pageName, updateHash = true) {
     showStampToast();
   }
 
-  if (updateHash) history.replaceState(null, "", `#${pageName}`);
+  if (updateHash && window.location.hash !== `#${pageName}`) {
+    history.pushState({ page: pageName }, "", `#${pageName}`);
+  }
   document.querySelector(".book").scrollIntoView({ block: "start", behavior: "smooth" });
 }
 
@@ -108,3 +117,7 @@ document.addEventListener("keydown", (event) => {
 
 const initialHash = window.location.hash.slice(1);
 showPage(pageOrder.includes(initialHash) ? initialHash : "cover", false);
+window.addEventListener("popstate", () => {
+  const hashPage = window.location.hash.slice(1);
+  showPage(pageOrder.includes(hashPage) ? hashPage : "cover", false);
+});
