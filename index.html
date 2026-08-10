@@ -1,138 +1,191 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Интерактивное портфолио-дневник Валерии Томилиной — Technical Artist и начинающего Game Designer.">
+  <title>Дневник Валерии · Technical Artist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Lora:ital,wght@0,500;1,500&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="head-inner">
-      <div class="logo"></div>
-      <div style="font-weight:700">Валерия Томилина<br><span class="meta">Technical Artist</span></div>
-      <nav>
-        <a href="#about">О себе</a>
-        <a href="#experience">Опыт</a>
-        <a href="#skills">Навыки</a>
-        <a href="#education">Образование</a>
-        <a href="#portfolio">Проекты</a>
-        <a href="#gallery">Галерея</a>
-        <a href="#animations">Анимации</a>
-        <a href="#contacts">Контакты</a>
-      </nav>
-    </div>
+  <a class="skip-link" href="#journal">Открыть дневник</a>
+  <div class="sky" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="desk-leaves desk-leaves--left" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="desk-leaves desk-leaves--right" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <header class="topbar">
+    <a class="mini-brand" href="#cover"><span>V</span> ValeriT</a>
+    <p>interactive portfolio journal</p>
+    <div class="chapter-progress" aria-live="polite"><span class="chapter-progress__bar"><i></i></span><b>0 / 6 глав</b></div>
   </header>
 
-  <main class="wrap">
-    <section id="about" class="panel">
-      <h1>О себе</h1>
-      <p>Технический художник с 3‑летним опытом в веб‑играх. Умею создавать и фиксить анимации в <strong>Spine 2D</strong>, подготавливать и оптимизировать графику, настраивать интеграцию ассетов в код.
-         Для ускорения рабочего процесса пишу совместно с gpt скрипты преимущественно на java. Развиваюсь в разных направлениях: от 2d графики до создания прототипов на различных движках (Game Maker/Unity/Unreal).
-         Два года изучала 3d и полгода работала на фрилансе, создавая модели окружения (стены/арки/окна)</p>
-    </section>
+  <main id="journal" class="journal-shell">
+    <nav class="book-tabs" aria-label="Главы дневника">
+      <button type="button" data-page="cover">Обложка</button>
+      <button type="button" data-page="profile">Обо мне</button>
+      <button type="button" data-page="tech-art">Tech Art</button>
+      <button type="button" data-page="three-d">3D-путь</button>
+      <button type="button" data-page="game-design">Game Design</button>
+      <button type="button" data-page="motion">Анимация</button>
+      <button type="button" data-page="contact">Контакты</button>
+    </nav>
 
-    <section id="experience" class="panel">
-      <h2>Опыт</h2>
-      <h3>Technical Artist <span class="meta">(2022)</span></h3>
-      <h3>Оператор виртуальной реальности и smm менеджер (по совместительству) <span class="meta">(2022)</span></h3>
-      <h3>Техник ЦДО (Центр дистанционного обучения) <span class="meta">(2020)</span></h3>
+    <div class="book">
+      <div class="book__rings" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
 
-      <ul>
-        <li>Spine 2D анимации, подготовка ассетов.</li>
-        <li>Photoshop: ретушь, оптимизация графики.</li>
-        <li>After Effects: простые графические эффекты.</li>
-        <li>Документация по ассетам.</li>
-        <li>Скрипты (GPT+Java): PNG→WebP с автонеймом, нарезка/сборка атласов.</li>
-      </ul>
-    </section>
-
-    <section id="skills" class="panel">
-      <h2>Навыки и инструменты</h2>
-      <div class="pills">
-        <span class="pill">Spine 2D</span>
-        <span class="pill">Photoshop</span>
-        <span class="pill">After Effects</span>
-        <span class="pill">Figma</span>
-        <span class="pill">Blender</span>
-        <span class="pill">ZBrush</span>
-        <span class="pill">Substance Painter</span>
-        <span class="pill">Marmoset</span>
-        <span class="pill">Maya</span>
-        <span class="pill">Java/GPT scripting</span>
-      </div>
-    </section>
-
-    <section id="education" class="panel">
-      <h2>Образование</h2>
-      <ul>
-        <li><strong>Бакалавриат:</strong> Прикладная математика и информатика — <em>ГУМРФ им. адмирала С.О.Макарова</em></li>
-        <li>Кайно: Blender 2.0</li>
-        <li>Кайно: Blender Gameready model (В процессе)</li>
-        <li>Contented: «Геймдизайнер» (В процессе)</li>
-      </ul>
-    </section>
-
-    <section id="gallery" class="panel">
-      <h2>Галерея</h2>
-        <div class="gallery-grid">
-          <!-- проект 1 -->
-            <img src="images\3d_Blade\blade_2.png" alt="3d_Blade" onclick="openLightbox(0, '3d_Blade')" data-group="3d_Blade">
-          <!-- проект 2 -->
-            <img src="images\neonCash\bgRegular.jpg" alt="neonCash" onclick="openLightbox(0, 'neonCash')" data-group="neonCash">
-          <!-- проект 3 -->
-            <img src="images\UI\UI.png" alt="UI" onclick="openLightbox(0, 'UI')" data-group="UI">
-          <!-- проект 4 -->
-          <img src="images\2Darts\rock.jpg" alt="2Darts" onclick="openLightbox(0, '2Darts')" data-group="2Darts">
-          <!-- проект 5 -->
-          <img src="images\3D_continue\deer.jpg" alt="3D_continue" onclick="openLightbox(0, '3D_continue')" data-group="3D_continue">
-          <!-- проект 6 -->
-          <img src="images\presentation\App_DnD_1.png" alt="presentation" onclick="openLightbox(0, 'presentation')" data-group="presentation">
+      <section class="chapter is-active" data-chapter="cover" aria-labelledby="cover-title">
+        <div class="page page--illustration">
+          <div class="shop-scene" aria-hidden="true">
+            <div class="cloud cloud--one"></div><div class="cloud cloud--two"></div>
+            <div class="shop"><div class="awning"></div><div class="door"><span></span><span></span></div><div class="window-box"></div></div>
+            <div class="vine vine--one"><i></i><i></i><i></i></div><div class="vine vine--two"><i></i><i></i><i></i></div>
+            <div class="cat cat--one"><i></i></div><div class="cat cat--two"><i></i></div>
           </div>
-    </section>
+          <p class="postcard-note">Небольшое место, где я храню<br>работы, идеи и планы на будущее.</p>
+        </div>
+        <div class="page page--cover-copy">
+          <span class="paperclip" aria-hidden="true"></span>
+          <p class="eyebrow">portfolio notes · 2026</p>
+          <h1 id="cover-title">Дневник<br><em>Валерии</em></h1>
+          <p class="cover-role">Technical Artist · 3D Artist<br>Game Designer in progress</p>
+          <div class="cover-message"><span>Добро пожаловать!</span><p>Листай страницы стрелками или выбирай цветные закладки. За каждую открытую главу дневник оставит маленький штамп.</p></div>
+          <button class="start-button" type="button" data-go="profile">Начать путешествие <span>→</span></button>
+          <div class="doodle-stars" aria-hidden="true">✦　·　✧</div>
+        </div>
+      </section>
 
-    <section id="animations" class="panel">
-      <h2>Анимации (видео)</h2>
-      <div class="gallery-grid">
-        <video controls muted controlsList="nodownload noremoteplayback" disablePictureInPicture>
-           <source src="animations/symbols_NeonCash.mp4" type="video/mp4">
-        </video>   
-        <video controls muted controlsList="nodownload noremoteplayback" disablePictureInPicture>
-           <source src="animations/freespinsOpening.mp4" type="video/mp4">
-        </video>   
-        <video controls muted controlsList="nodownload noremoteplayback" disablePictureInPicture>
-           <source src="animations/jackpotAfrica.mp4" type="video/mp4">
-        </video>  
-        <video controls muted controlsList="nodownload noremoteplayback" disablePictureInPicture>
-           <source src="animations/jackpotMoon.mp4" type="video/mp4">
-        </video>  
-        <video controls muted controlsList="nodownload noremoteplayback" disablePictureInPicture>
-           <source src="animations/alcimist.mp4" type="video/mp4">
-        </video>  
-        <video controls muted controlsList="nodownload noremoteplayback" disablePictureInPicture>
-           <source src="animations/symbolLAfrica.mp4" type="video/mp4">
-        </video> 
-      </div>
-    </section>
+      <section class="chapter" data-chapter="profile" aria-labelledby="profile-title" hidden>
+        <div class="page page--profile-left">
+          <span class="chapter-number">chapter 01</span>
+          <p class="eyebrow">Давайте знакомиться</p>
+          <h2 id="profile-title">Привет, я Валерия</h2>
+          <p class="large-note">Мне нравится находиться там, где встречаются картинка, движение и логика.</p>
+          <p>Я технический художник с образованием в прикладной математике и информатике. Работаю с игровой графикой, Spine 2D-анимацией, ассетами и небольшими инструментами для пайплайна.</p>
+          <p>А ещё мне интересно понимать игру целиком — не только как она выглядит, но и почему вызывает определённые ощущения.</p>
+          <blockquote>Технология — ещё один способ помочь творческой идее стать живой.</blockquote>
+        </div>
+        <div class="page page--profile-right">
+          <div class="profile-card">
+            <div class="avatar-placeholder"><span>VT</span><small>artist at work</small></div>
+            <div><b>Валерия Томилина</b><span>Technical Artist</span><span>Санкт-Петербург · удалённо</span></div>
+          </div>
+          <div class="note-card note-card--green"><h3>Сейчас</h3><p>Работаю Technical Artist и прохожу курс повышения квалификации по геймдизайну.</p></div>
+          <div class="note-card note-card--yellow"><h3>Мне интересно</h3><ul><li>оживлять игровой арт;</li><li>разбираться в системах;</li><li>создавать удобный пайплайн;</li><li>придумывать маленькие миры.</li></ul></div>
+          <div class="stamp stamp--profile" aria-hidden="true">HELLO!<small>01</small></div>
+        </div>
+      </section>
 
-    <section id="contacts" class="panel">
-      <h2>Контакты</h2>
-      <p>📩 Tomler94@yandex.ru| Telegram: @ValeriT94 | Discord: jokerdark_shepard | Artstation: https://www.artstation.com/jer_shepard</p>
-    </section>
+      <section class="chapter" data-chapter="tech-art" aria-labelledby="tech-title" hidden>
+        <div class="page page--case-left">
+          <span class="chapter-number">chapter 02 · released project</span>
+          <p class="eyebrow">Рабочая запись</p>
+          <h2 id="tech-title">Neon Cash</h2>
+          <p class="case-meta">Stake · около 2 месяцев · команда из 2 человек</p>
+          <p class="large-note">Проект мы делали вдвоём с программистом. Для нас это был первый опыт работы с движком Stake.</p>
+          <p>Я отвечала за визуальную часть: создавала фоны и барабаны на основе генераций, вручную дорабатывала графику, подготавливала ассеты и анимировала игровые элементы.</p>
+          <div class="tool-note"><b>Задача без готового решения</b><p>Исходных файлов не было, поэтому вместе с AI я написала Java-инструмент для распаковки ассетов, замены графики и сборки обратно в нужном формате.</p><code>unpack → replace → repack</code></div>
+          <p class="quiet-note">Слот был выпущен на Stake, а позднее скрыт из публичной витрины по внутреннему решению компании.</p>
+        </div>
+        <div class="page page--case-right">
+          <button class="pinned-shot" type="button" data-gallery="neonCash"><img src="images/neonCash/bgRegular.jpg" alt="Рабочий фон Neon Cash"><span>рабочие изображения · открыть</span></button>
+          <div class="mini-video"><video controls muted playsinline preload="metadata"><source src="animations/symbols_NeonCash.mp4" type="video/mp4"></video><span>анимация символов</span></div>
+          <div class="mini-video"><video controls muted playsinline preload="metadata"><source src="animations/freespinsOpening.mp4" type="video/mp4"></video><span>открытие фриспинов</span></div>
+          <div class="stamp stamp--done" aria-hidden="true">SHIPPED<small>02</small></div>
+        </div>
+      </section>
 
-    <footer>© 2025 ValeriT — Resume & Portfolio</footer>
+      <section class="chapter" data-chapter="three-d" aria-labelledby="three-d-title" hidden>
+        <div class="page page--three-d-left">
+          <span class="chapter-number">chapter 03 · previous journey</span>
+          <p class="eyebrow">3D-фриланс</p>
+          <h2 id="three-d-title">Средневековый мир,<br>ассет за ассетом</h2>
+          <p class="large-note">Чуть меньше года я работала на фрилансе как 3D-художник над средневековой игрой.</p>
+          <p>Я создавала модели окружения — стены, арки, окна и другие архитектурные элементы. Параллельно работала с купленными командой ассетами: делала ретопологию и оптимизировала их для использования в проекте.</p>
+          <div class="quest-list"><h3>Что входило в работу</h3><label><i>✓</i> моделирование окружения</label><label><i>✓</i> ретопология</label><label><i>✓</i> оптимизация готовых ассетов</label><label><i>✓</i> подготовка моделей для игры</label></div>
+          <p class="quiet-note">Подходящие рендеры этого проекта ещё нужно собрать — пока здесь остаётся честная запись об опыте, а не случайная замена.</p>
+        </div>
+        <div class="page page--three-d-right">
+          <p class="torn-title">Из личной 3D-практики</p>
+          <button class="scrap scrap--blade" type="button" data-gallery="blade"><img src="images/3d_Blade/blade_1.png" alt="Презентация 3D-модели клинка"><span>game-ready blade</span></button>
+          <button class="scrap scrap--robot" type="button" data-gallery="practice3d"><img src="images/3D_continue/robot.jpg" alt="Модель робота"><span>моделирование · практика</span></button>
+          <div class="materials-note"><b>Любимые этапы</b><span>форма</span><span>чистая сетка</span><span>оптимизация</span></div>
+          <div class="stamp stamp--three-d" aria-hidden="true">3D PATH<small>03</small></div>
+        </div>
+      </section>
+
+      <section class="chapter" data-chapter="game-design" aria-labelledby="design-title" hidden>
+        <div class="page page--design-left">
+          <span class="chapter-number">chapter 04 · current quest</span>
+          <p class="eyebrow">Новая глава</p>
+          <h2 id="design-title">Учусь думать<br>как геймдизайнер</h2>
+          <p class="large-note">Сейчас я прохожу курс повышения квалификации по геймдизайну.</p>
+          <p>Хочу лучше понимать игровые системы, мотивацию игрока, баланс и путь от идеи до прототипа. Для меня это продолжение Technical Art: возможность видеть не только визуальную часть, а весь опыт целиком.</p>
+          <div class="course-progress"><span><i></i></span><b>обучение продолжается</b></div>
+          <div class="study-tags"><span>game loops</span><span>GDD</span><span>balance</span><span>prototyping</span><span>player experience</span></div>
+        </div>
+        <div class="page page--witch-right">
+          <div class="moon" aria-hidden="true"></div>
+          <p class="eyebrow">Future project</p>
+          <h3>Маленький<br>ведьмин проект</h3>
+          <p>Однажды я хочу собрать собственную небольшую игру — уютную, немного таинственную и полностью мою.</p>
+          <div class="spell-list"><span>☐ найти её настоящее настроение</span><span>☐ собрать игровой цикл</span><span>☐ сделать первый прототип</span><span>☐ позволить проекту вырасти</span></div>
+          <p class="handwritten">Это пока обещание самой себе,<br>а не дата релиза ✦</p>
+          <div class="stamp stamp--witch" aria-hidden="true">NEW QUEST<small>04</small></div>
+        </div>
+      </section>
+
+      <section class="chapter" data-chapter="motion" aria-labelledby="motion-title" hidden>
+        <div class="page page--motion-left">
+          <span class="chapter-number">chapter 05 · motion archive</span>
+          <p class="eyebrow">Spine 2D</p>
+          <h2 id="motion-title">Когда картинка начинает двигаться</h2>
+          <p>Небольшой архив коммерческой анимационной практики. Здесь важнее само движение, поэтому видео оставлены без лишней декоративной подачи.</p>
+          <div class="motion-card"><video controls muted playsinline preload="metadata"><source src="animations/jackpotAfrica.mp4" type="video/mp4"></video><span>Jackpot · Africa</span></div>
+          <div class="motion-card"><video controls muted playsinline preload="metadata"><source src="animations/jackpotMoon.mp4" type="video/mp4"></video><span>Jackpot · Moon</span></div>
+        </div>
+        <div class="page page--motion-right">
+          <div class="motion-card"><video controls muted playsinline preload="metadata"><source src="animations/alcimist.mp4" type="video/mp4"></video><span>Alchemist</span></div>
+          <div class="motion-card"><video controls muted playsinline preload="metadata"><source src="animations/symbolLAfrica.mp4" type="video/mp4"></video><span>Symbol · Africa</span></div>
+          <div class="motion-sketch"><i></i><i></i><i></i><span>timing · rhythm · anticipation</span></div>
+          <div class="stamp stamp--motion" aria-hidden="true">IN MOTION<small>05</small></div>
+        </div>
+      </section>
+
+      <section class="chapter" data-chapter="contact" aria-labelledby="contact-title" hidden>
+        <div class="page page--contact-left">
+          <span class="chapter-number">final chapter</span>
+          <p class="eyebrow">Все штампы собраны?</p>
+          <h2 id="contact-title">Спасибо, что заглянули в мой дневник</h2>
+          <p class="large-note">Я открыта новым задачам, творческим знакомствам и разговорам об играх.</p>
+          <div class="contact-list"><a href="mailto:Tomler94@yandex.ru"><span>Почта</span>Tomler94@yandex.ru</a><a href="https://t.me/ValeriT94" target="_blank" rel="noreferrer"><span>Telegram</span>@ValeriT94</a><a href="https://www.artstation.com/jer_shepard" target="_blank" rel="noreferrer"><span>ArtStation</span>jer_shepard</a><p><span>Discord</span>jokerdark_shepard</p></div>
+        </div>
+        <div class="page page--contact-right">
+          <div class="letter"><p>Если вам близко сочетание творчества, любопытства и технического подхода — буду рада познакомиться.</p><span>Валерия ✿</span></div>
+          <div class="collected-stamps" aria-label="Собранные штампы"><i>01</i><i>02</i><i>03</i><i>04</i><i>05</i><i>06</i></div>
+          <button class="restart-button" type="button" data-go="cover">Вернуться на обложку</button>
+          <div class="stamp stamp--contact" aria-hidden="true">SEE YOU!<small>06</small></div>
+        </div>
+      </section>
+    </div>
+
+    <div class="book-controls">
+      <button class="page-arrow page-arrow--prev" type="button" aria-label="Предыдущая глава">← <span>назад</span></button>
+      <p><span class="current-page">Обложка</span><i>•</i><span class="page-count">1 / 7</span></p>
+      <button class="page-arrow page-arrow--next" type="button" aria-label="Следующая глава"><span>дальше</span> →</button>
+    </div>
   </main>
 
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox">
-    <div class="lightbox-content">
-      <span class="close-btn" onclick="closeLightbox()">&times;</span>
-      <span class="nav-btn prev" onclick="changeImage(-1)">&#10094;</span>
-      <img id="lightbox-img" src="" alt="Large view">
-      <span class="nav-btn next" onclick="changeImage(1)">&#10095;</span>
-    </div>
-  </div>
+  <dialog class="lightbox" aria-label="Просмотр работы">
+    <button class="lightbox__close" type="button" aria-label="Закрыть">×</button>
+    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Предыдущее изображение">←</button>
+    <figure><img src="" alt=""><figcaption></figcaption></figure>
+    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Следующее изображение">→</button>
+  </dialog>
 
+  <div class="stamp-toast" role="status" aria-live="polite"><span>✦</span> Новая глава исследована</div>
   <script src="scripts.js"></script>
 </body>
 </html>
