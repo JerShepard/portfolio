@@ -173,3 +173,524 @@ body::before { inset: 0; opacity: .42; background: repeating-linear-gradient(89d
 @media (max-width: 620px) {
   .journal-shell { width: 100%; }.chapter, .page { min-height: 0; }.inside-cover { min-height: 500px; padding: 65px 24px; }.inside-cover > strong { font-size: 60px; }.inside-cover__note { margin-top: 50px !important; }.pressed-plant { right: 35px; transform: scale(.75) rotate(19deg); transform-origin: bottom right; }
 }
+
+/* production artwork supplied by the artist */
+body { background: #50392f url("images/journal/bg.png") center / cover fixed no-repeat; }
+body::before { opacity: 0; }
+.journal-shell { width: min(1080px, calc(100% - 130px)); }
+.book { min-height: 669px; background: transparent url("images/journal/notebook.png") center / 100% 100% no-repeat; border: 0; border-radius: 0; box-shadow: 0 34px 65px rgba(43,24,16,.34); }
+.book::before, .book::after, .book__rings { display: none; }
+.chapter { min-height: 669px; padding: 3.4% 3.6% 4.5%; gap: 4.8%; }
+.book .page { min-height: 590px; padding: 36px 34px; background: transparent; background-image: none; box-shadow: none; }
+.book .page::after { display: none; }
+.page h2 { font-size: clamp(40px,3.8vw,56px); }
+.page--illustration { padding: 32px 34px !important; }
+.inside-cover { min-height: 525px; padding: 62px 38px; background: rgba(255,253,245,.13); border: 0; box-shadow: none; }
+.inside-cover::before { border-color: rgba(83,105,87,.13); }
+.page--cover-copy { padding-left: 46px !important; }
+.page--cover-copy h1 { font-size: clamp(64px,6.7vw,92px); }
+
+.desk-props { overflow: visible; }
+.desk-sprite { position: absolute; background-image: url("images/journal/elements.png"); background-repeat: no-repeat; filter: drop-shadow(0 11px 9px rgba(40,23,15,.3)); }
+.keycap { width: 101px; height: 105px; color: transparent; background-color: transparent; border: 0; border-radius: 0; box-shadow: none; }
+.keycap--ctrl { left: 1.5%; top: 24%; background-position: -346px -64px; transform: scale(.6) rotate(-13deg); }
+.keycap--c { left: 5%; top: 33%; background-position: -243px -64px; transform: scale(.55) rotate(12deg); }
+.keycap--v { left: 2.5%; top: 41%; background-position: -243px -171px; transform: scale(.55) rotate(-5deg); }
+.tablet-pen { right: 30%; top: 4.5%; width: 534px; height: 61px; background-position: -1px -1px; border-radius: 0; box-shadow: none; transform: scale(.48) rotate(1deg); transform-origin: right top; }
+.tablet-pen::before, .tablet-pen i { display: none; }
+.desk-plant { left: -2%; bottom: -3%; width: 240px; height: 281px; background-position: -1px -64px; transform: scale(.58); transform-origin: left bottom; }
+
+.player-sprite { position: absolute; display: block; background-image: url("images/journal/player.png"); background-repeat: no-repeat; filter: drop-shadow(0 10px 8px rgba(42,24,15,.25)); }
+.cassette-player { right: .5%; bottom: 5%; width: 302px; height: 190px; padding: 0; background: transparent; border: 0; border-radius: 0; box-shadow: none; transform: scale(.72) rotate(4deg); transform-origin: right bottom; }
+.player-front { z-index: 2; inset: 0; width: 302px; height: 190px; background-position: -1px -1px; }
+.player-back { z-index: 1; left: 27px; top: 42px; width: 193px; height: 106px; background-position: -181px -313px; }
+.cassette-stack { right: 1.5%; bottom: 27%; width: 210px; height: 225px; transform: scale(.68); transform-origin: right bottom; }
+.cassette-stack .cassette { width: 179px; height: 118px; background-color: transparent; border: 0; border-radius: 0; box-shadow: none; }
+.cassette-stack .cassette::before, .cassette-stack .cassette::after { display: none; }
+.cassette-stack i.cassette--rainy { left: 4px; right: auto; top: auto; bottom: 0; background-color: transparent; background-position: -1px -313px; transform: rotate(-9deg); }
+.cassette-stack i.cassette--night { left: auto; right: -12px; top: 18px; bottom: auto; background-color: transparent; background-position: -1px -193px; transform: rotate(8deg); }
+.cassette-stack i.cassette--soft { left: 0; right: auto; top: 86px; bottom: auto; background-color: transparent; background-position: -182px -193px; transform: rotate(-4deg); }
+
+@media (max-width: 1350px) {
+  .journal-shell { width: min(1020px,calc(100% - 110px)); }
+  .cassette-player { transform: scale(.58) rotate(4deg); }
+  .cassette-stack { transform: scale(.55); }
+  .desk-plant { transform: scale(.48); }
+}
+@media (max-width: 1120px) {
+  .journal-shell { width: min(980px,calc(100% - 30px)); }
+  .book { min-height: 0; background: none; box-shadow: none; }
+  .chapter { padding: 0; gap: 18px; }
+  .book .page { min-height: 620px; padding: 55px 45px; background: #fffaf0; border: 6px solid #6e774b; border-radius: 26px; box-shadow: 0 18px 40px rgba(55,31,19,.25); }
+  .book .page:nth-child(2) { background: #fffdf6; }
+}
+@media (max-width: 620px) {
+  .journal-shell { width: 100%; }
+  .book .page { min-height: 0; padding: 43px 21px; border-width: 4px; border-radius: 18px; }
+  .inside-cover { min-height: 500px; }
+}
+
+/* final desktop composition: fitted to the artist's 1920 x 1080 desk layout */
+@media (min-width: 761px) {
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  body {
+    background-size: cover;
+  }
+
+  .topbar {
+    display: none;
+  }
+
+  .journal-shell {
+    position: fixed;
+    z-index: 3;
+    left: 50%;
+    top: 9vh;
+    width: min(132vh, calc(100vw - 22vh));
+    margin: 0;
+    transform: translateX(-50%);
+  }
+
+  .journal-shell::before {
+    display: none;
+  }
+
+  .book {
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: 1272 / 770;
+    overflow: hidden;
+    background: transparent url("images/journal/notebook.png") center top / 100% auto no-repeat;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0 2.8vh 5.4vh rgba(43,24,16,.3);
+  }
+
+  .chapter {
+    position: absolute;
+    inset: 0;
+    min-height: 0;
+    height: 100%;
+    padding: 3.1% 3.6% 4.1%;
+    gap: 4.8%;
+  }
+
+  .book .page {
+    height: 100%;
+    min-height: 0;
+    padding: clamp(18px,2.8vh,32px) clamp(18px,2.75vh,31px);
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .book .page:nth-child(2) {
+    background: transparent;
+  }
+
+  .inside-cover {
+    min-height: 0;
+    height: 100%;
+  }
+
+  .book-tabs {
+    z-index: 14;
+    top: 4.2vh;
+    right: 2.5vh;
+    gap: .45vh;
+  }
+
+  .book-tabs button {
+    width: clamp(82px,9.45vh,102px);
+    padding: clamp(5px,.8vh,9px) 7px clamp(5px,.8vh,9px) 15px;
+    font-size: clamp(11px,1.3vh,14px);
+  }
+
+  .book-controls {
+    position: absolute;
+    z-index: 13;
+    left: 50%;
+    top: calc(100% + .9vh);
+    bottom: auto;
+    width: min(70vh, 56vw);
+    padding: 0;
+    transform: translateX(-50%);
+  }
+
+  .book-controls p {
+    padding: .35vh 1.2vh;
+    color: rgba(255,247,230,.78);
+    background: rgba(66,43,31,.32);
+    border-radius: 99px;
+    backdrop-filter: blur(3px);
+  }
+
+  .desk-props {
+    position: fixed;
+    z-index: 5;
+    display: block;
+    overflow: hidden;
+  }
+
+  .desk-sprite {
+    background-size: 49.63vh 32.04vh;
+  }
+
+  .keycap {
+    width: 9.35vh;
+    height: 9.72vh;
+  }
+
+  .keycap--ctrl {
+    left: 3.9vw;
+    top: 29.8vh;
+    background-position: -32.04vh -5.93vh;
+    transform: scale(.83) rotate(-5deg);
+    transform-origin: center;
+  }
+
+  .keycap--c {
+    left: 6.1vw;
+    top: 38.4vh;
+    background-position: -22.5vh -5.93vh;
+    transform: scale(.83) rotate(12deg);
+    transform-origin: center;
+  }
+
+  .keycap--v {
+    left: 8.1vw;
+    top: 46.6vh;
+    background-position: -22.5vh -15.83vh;
+    transform: scale(.83) rotate(-5deg);
+    transform-origin: center;
+  }
+
+  .tablet-pen {
+    left: 34.9vw;
+    right: auto;
+    top: 5.7vh;
+    width: 49.44vh;
+    height: 5.65vh;
+    background-position: -.09vh -.09vh;
+    transform: none;
+  }
+
+  .desk-plant {
+    left: -1.15vw;
+    bottom: -1.8vh;
+    width: 22.22vh;
+    height: 26.02vh;
+    background-position: -.09vh -5.93vh;
+    transform: none;
+  }
+
+  .player-sprite {
+    background-size: 34.72vh 40vh;
+  }
+
+  .cassette-player .player-sprite {
+    background-size: 38.19vh 44vh;
+  }
+
+  .cassette-player {
+    right: -2.4vw;
+    bottom: -.15vh;
+    width: 30.76vh;
+    height: 19.35vh;
+    transform: rotate(1deg);
+  }
+
+  .player-front {
+    width: 30.76vh;
+    height: 19.35vh;
+    background-position: -.1vh -.1vh;
+  }
+
+  .player-back {
+    left: 2.75vh;
+    top: 4.28vh;
+    width: 19.66vh;
+    height: 10.79vh;
+    background-position: -18.44vh -31.88vh;
+  }
+
+  .cassette-stack {
+    right: .65vw;
+    bottom: 23.2vh;
+    width: 19.45vh;
+    height: 29vh;
+    transform: none;
+  }
+
+  .cassette-stack .cassette {
+    width: 16.57vh;
+    height: 10.93vh;
+  }
+
+  .cassette-stack i.cassette--rainy {
+    left: .35vh;
+    top: 0;
+    bottom: auto;
+    background-position: -.09vh -28.98vh;
+    transform: rotate(5deg);
+  }
+
+  .cassette-stack i.cassette--night {
+    left: -3vh;
+    right: auto;
+    top: 9.4vh;
+    bottom: auto;
+    background-position: -.09vh -17.87vh;
+    transform: rotate(-11deg);
+  }
+
+  .cassette-stack i.cassette--soft {
+    left: -1.7vh;
+    right: auto;
+    top: 18.4vh;
+    bottom: auto;
+    background-position: -16.85vh -17.87vh;
+    transform: rotate(2deg);
+  }
+
+  /* Keep every chapter inside the paper instead of cropping long content. */
+  .page h2 {
+    margin-bottom: clamp(12px,2.1vh,23px);
+    font-size: clamp(34px,4.8vh,52px);
+  }
+
+  .page p {
+    margin-block: clamp(7px,1.15vh,13px);
+    font-size: clamp(10px,1.2vh,13px);
+    line-height: 1.48;
+  }
+
+  .large-note {
+    font-size: clamp(14px,1.75vh,18px) !important;
+    line-height: 1.42;
+  }
+
+  .chapter-number {
+    margin-bottom: clamp(8px,1.3vh,15px);
+  }
+
+  .page blockquote {
+    margin-top: clamp(12px,1.8vh,20px);
+    padding-block: .7vh;
+    font-size: clamp(17px,2vh,22px);
+  }
+
+  .profile-card {
+    grid-template-columns: clamp(90px,10.5vh,118px) 1fr;
+    gap: 1.5vh;
+    padding: 1.2vh;
+  }
+
+  .avatar-placeholder {
+    min-height: clamp(88px,10.5vh,116px);
+  }
+
+  .note-card {
+    margin-top: clamp(11px,1.8vh,20px);
+    padding: clamp(10px,1.45vh,16px) clamp(13px,1.8vh,20px);
+  }
+
+  .note-card h3 {
+    font-size: clamp(19px,2.25vh,24px);
+  }
+
+  .note-card p,
+  .note-card ul {
+    font-size: clamp(9px,1.05vh,11px);
+  }
+
+  .case-meta {
+    margin: -1.2vh 0 1.7vh;
+  }
+
+  .tool-note {
+    margin-top: 1.8vh;
+    padding: 1.4vh 1.6vh;
+  }
+
+  .tool-note p {
+    margin-block: .45vh;
+  }
+
+  .page--case-right {
+    gap: 1.4vh;
+    padding-top: 5.5vh;
+  }
+
+  .pinned-shot {
+    padding: .8vh .8vh 2.5vh;
+  }
+
+  .pinned-shot img {
+    height: clamp(150px,25vh,250px);
+  }
+
+  .mini-video {
+    padding: .65vh;
+  }
+
+  .quest-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.2vh;
+    margin-top: 2vh;
+    padding: 1.4vh 1.6vh;
+  }
+
+  .quest-list h3 {
+    grid-column: 1 / -1;
+    margin-bottom: .7vh;
+    font-size: clamp(18px,2.2vh,23px);
+  }
+
+  .quest-list label {
+    margin: .45vh 0;
+    font-size: clamp(9px,1.05vh,11px);
+  }
+
+  .page--three-d-right {
+    padding-top: 6vh;
+  }
+
+  .torn-title {
+    right: 6%;
+    top: 3.5%;
+    padding: .7vh 1.4vh;
+    font-size: clamp(17px,2vh,21px) !important;
+  }
+
+  .scrap--blade {
+    left: 7%;
+    top: 12%;
+    width: 73%;
+    height: 46%;
+  }
+
+  .scrap--robot {
+    right: 6%;
+    top: 56%;
+    width: 52%;
+    height: 33%;
+  }
+
+  .materials-note {
+    left: 6%;
+    bottom: 8%;
+    width: 41%;
+    padding: 1.2vh;
+  }
+
+  .materials-note b {
+    font-size: clamp(17px,2vh,21px);
+  }
+
+  .materials-note span {
+    font-size: clamp(8px,.95vh,10px);
+  }
+
+  .course-progress {
+    margin: 2.5vh 0 1.5vh;
+  }
+
+  .page--witch-right h3 {
+    margin: 4vh 0 2vh;
+    font-size: clamp(36px,5.4vh,62px);
+  }
+
+  .moon {
+    width: clamp(82px,10vh,112px);
+  }
+
+  .moon::after {
+    width: 94%;
+  }
+
+  .spell-list {
+    gap: .65vh;
+    margin-top: 2.6vh;
+    padding: 1.4vh;
+    font-size: clamp(9px,1.05vh,11px);
+  }
+
+  .handwritten {
+    margin-top: 2.4vh !important;
+    font-size: clamp(17px,2vh,21px) !important;
+  }
+
+  .page--motion-left,
+  .page--motion-right {
+    padding-top: 3.6vh;
+  }
+
+  .motion-card {
+    margin-bottom: 1.2vh;
+    padding: .65vh .65vh 1.8vh;
+  }
+
+  .motion-card video {
+    height: clamp(92px,16vh,170px);
+    aspect-ratio: auto;
+  }
+
+  .motion-sketch {
+    height: clamp(64px,8vh,90px);
+    margin-top: 1vh;
+  }
+
+  .contact-list {
+    gap: .5vh;
+    margin-top: 2.6vh;
+  }
+
+  .contact-list a,
+  .contact-list p {
+    padding: .8vh 0;
+  }
+
+  .letter {
+    padding: clamp(25px,3.6vh,42px) clamp(24px,3.5vh,40px);
+  }
+
+  .letter p {
+    font-size: clamp(14px,1.75vh,18px);
+  }
+}
+
+@media (min-width: 761px) and (max-height: 760px) {
+  .page h2 { margin-bottom: 2vh; font-size: clamp(30px,5.15vh,44px); }
+  .page p { font-size: clamp(9px,1.55vh,12px); line-height: 1.48; }
+  .large-note { font-size: clamp(13px,2.15vh,17px) !important; }
+  .chapter-number { margin-bottom: 1.5vh; }
+  .profile-card { grid-template-columns: 10.5vh 1fr; gap: 1.5vh; padding: 1.2vh; }
+  .avatar-placeholder { min-height: 10vh; }
+  .note-card { margin-top: 1.8vh; padding: 1.5vh 1.8vh; }
+  .note-card h3 { font-size: 3vh; }
+  .note-card p, .note-card ul { font-size: 1.3vh; }
+  .page--three-d-left h2 { font-size: clamp(28px,4.7vh,36px); }
+  .page--three-d-left .large-note { font-size: clamp(12px,1.8vh,14px) !important; }
+  .page--three-d-left .quiet-note { margin-top: .6vh; font-size: clamp(8px,1.15vh,9px) !important; }
+  .quest-list { margin-top: 1.2vh; padding: 1vh 1.2vh; }
+  .quest-list h3 { font-size: 2.5vh; }
+  .quest-list label { margin: .2vh 0; font-size: 1.15vh; }
+  .tool-note { margin-top: 1.2vh; padding: 1vh 1.25vh; }
+  .tool-note p { font-size: clamp(8px,1.2vh,10px); }
+  .page--case-left .quiet-note { font-size: clamp(8px,1.15vh,9px) !important; }
+}
+
+@media (max-width: 760px) {
+  html, body { overflow-x: hidden; }
+  .desk-props { display: none; }
+}
